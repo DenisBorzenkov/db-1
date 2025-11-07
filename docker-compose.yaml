@@ -13,6 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
       # сюда кладём твой дамп и скрипт инициализации
       - ./initdb:/docker-entrypoint-initdb.d
+      - ./seed:/seed:ro 
     ports:
       - "5432:5432"
     networks:
